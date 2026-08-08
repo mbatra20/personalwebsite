@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAF9F6; }
+  a { color: inherit; }
+  ::selection { background: #e7d8c4; }
+  .nav-link { transition: color .18s ease; }
+  .nav-link:hover { color: #8a6d4b !important; }
+  .contact-link { transition: color .18s ease, border-color .18s ease; }
+  .contact-link:hover { color: #8a6d4b !important; border-color: #8a6d4b !important; }
+  .headshot-wrap { transition: transform .3s ease, box-shadow .3s ease; }
+  .headshot-wrap:hover { transform: scale(1.03); box-shadow: 0 40px 70px -30px rgba(60,45,25,.55) !important; }
+  .hover-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease; }
+  .hover-card:hover { transform: translateY(-4px) scale(1.008); background: #fff !important; border-color: #caa982 !important; box-shadow: 0 22px 44px -24px rgba(60,45,25,.55) !important; }
+  .hover-card:hover .accent-bar { transform: scaleY(1) !important; }
+  .tag { transition: background .18s ease, color .18s ease; }
+  .tag:hover { background: #8a6d4b !important; color: #fff !important; }
+  .chip { transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+  .chip:hover { transform: translateY(-2px); border-color: #8a6d4b !important; box-shadow: 0 8px 18px -10px rgba(60,45,25,.4); }
+</style>
+</helmet>
+
+<div style="font-family:'Public Sans',sans-serif; color:#1c1b18; background:#FAF9F6; min-height:100vh;">
+
+  <!-- top bar -->
+  <header style="position:sticky; top:0; z-index:20; background:rgba(250,249,246,0.82); backdrop-filter:blur(10px); border-bottom:1px solid #eae6de;">
+    <div style="max-width:960px; margin:0 auto; padding:18px 40px; display:flex; justify-content:space-between; align-items:center;">
+      <a href="#top" style="text-decoration:none; display:flex; align-items:center; gap:11px;">
+        <span style="flex:0 0 auto; width:34px; height:34px; border-radius:9px; background:#1c1b18; color:#FAF9F6; display:flex; align-items:center; justify-content:center; font-family:'Instrument Serif',serif; font-size:19px; letter-spacing:0.02em;">MB</span>
+      </a>
+      <nav style="display:flex; gap:28px; font-size:14px;">
+        <a href="#about" class="nav-link" style="text-decoration:none; color:#6b6860;">About</a>
+        <a href="#education" class="nav-link" style="text-decoration:none; color:#6b6860;">Education</a>
+        <a href="#experience" class="nav-link" style="text-decoration:none; color:#6b6860;">Experience</a>
+        <a href="#projects" class="nav-link" style="text-decoration:none; color:#6b6860;">Projects</a>
+        <a href="#interests" class="nav-link" style="text-decoration:none; color:#6b6860;">Interests</a>
+        <a href="#contact" class="nav-link" style="text-decoration:none; color:#6b6860;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" style="max-width:960px; margin:0 auto;">
+
+    <!-- hero -->
+    <section id="about" style="padding:80px 40px 96px; scroll-margin-top:80px; display:flex; gap:56px; align-items:center;">
+      <div style="flex:1; min-width:0;">
+        <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:64px; line-height:1.02; margin:0; letter-spacing:0.005em;">Mahika Batra</h1>
+        <p style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:12px 0 0; font-family:'Public Sans',sans-serif; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#8f8b82; font-weight:600;"><span style="color:#8a6d4b;">Software Engineer</span><span style="width:4px; height:4px; border-radius:50%; background:#cfc9bd;"></span><span>CS @ Georgia Tech</span></p>
+        <div style="display:flex; flex-wrap:wrap; gap:28px; margin:28px 0 0; font-size:14px; font-weight:600;">
+          <a href="mailto:mbatra9@gatech.edu" class="contact-link" style="text-decoration:none; border-bottom:2px solid #1c1b18; padding-bottom:2px;">mbatra9@gatech.edu</a>
+          <a href="#" class="contact-link" style="text-decoration:none; border-bottom:2px solid #d8d3c9; padding-bottom:2px; color:#6b6860;">LinkedIn</a>
+          <a href="tel:5712467940" class="contact-link" style="text-decoration:none; border-bottom:2px solid #d8d3c9; padding-bottom:2px; color:#6b6860;">571·246·7940</a>
+        </div>
+      </div>
+      <div class="headshot-wrap" style="flex:0 0 auto; width:300px; height:300px; border-radius:50%; overflow:hidden; box-shadow:0 30px 60px -30px rgba(60,45,25,0.4);">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="headshot" shape="circle" placeholder="Drop your headshot" src="assets/mahika-headshot.jpeg" style="width:100%; height:100%;" hint-size="100%,100%"></x-import>
+      </div>
+    </section>
+
+    <!-- education -->
+    <section id="education" style="border-top:1px solid #e4e1da; padding:64px 40px; display:grid; grid-template-columns:200px 1fr; gap:44px; scroll-margin-top:72px;">
+      <div style="font-family:'Newsreader',serif; font-style:italic; font-size:26px; color:#8a6d4b;">Education</div>
+      <div style="display:flex; flex-direction:column; gap:32px;">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px;">
+            <div>
+              <h3 style="margin:0; font-size:21px; font-weight:600;">Georgia Institute of Technology</h3>
+              <div style="font-family:'Newsreader',serif; font-style:italic; font-size:15px; color:#8a6d4b; margin-top:2px;">B.S./M.S. Computer Science · GPA 3.85</div>
+            </div>
+            <div style="text-align:right; white-space:nowrap;">
+              <div style="font-size:13px; color:#57544d; font-weight:600;">Atlanta, GA</div>
+              <div style="font-size:12.5px; color:#8f8b82; margin-top:2px;">May 2028</div>
+            </div>
+          </div>
+          <p style="margin:8px 0 0; font-size:15px; color:#57544d;">Concentration: Artificial Intelligence &amp; Information Internetworks</p>
+          <p style="margin:10px 0 0; font-size:14px; color:#8f8b82; line-height:1.6;">Coursework: Object-Oriented Programming · Data Structures &amp; Algorithms · Computer Organization &amp; Programming · Systems &amp; Networks · Intro to Artificial Intelligence · Design &amp; Analysis of Algorithms</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- experience -->
+    <section id="experience" style="border-top:1px solid #e4e1da; padding:64px 40px; display:grid; grid-template-columns:200px 1fr; gap:44px; scroll-margin-top:72px;">
+      <div style="font-family:'Newsreader',serif; font-style:italic; font-size:26px; color:#8a6d4b;">Experience</div>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <sc-for list="{{ jobs }}" as="job" hint-placeholder-count="6">
+          <div class="hover-card" style="{{ job.cardStyle }}">
+            <div class="accent-bar" style="{{ job.accentStyle }}"></div>
+            <div style="display:flex; gap:18px; align-items:flex-start;">
+              <div style="flex:0 0 auto; width:52px; height:52px; border-radius:12px; overflow:hidden; border:1px solid #e4e1da; background:#fff; position:relative;">
+                <span style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:'Newsreader',serif; font-size:20px; color:#8a6d4b;">{{ job.mono }}</span>
+                <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ job.logoId }}" shape="rounded" radius="12" placeholder="Logo" src="{{ job.logoSrc }}" style="position:relative; width:100%; height:100%;" hint-size="100%,100%"></x-import>
+              </div>
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px;">
+                  <div>
+                    <h3 style="margin:0; font-size:17px; font-weight:600;">{{ job.company }}</h3>
+                    <div style="font-family:'Newsreader',serif; font-style:italic; font-size:15px; color:#8a6d4b; margin-top:2px;">{{ job.role }}</div>
+                  </div>
+                  <div style="text-align:right; white-space:nowrap;">
+                    <div style="font-size:13px; color:#57544d; font-weight:600;">{{ job.location }}</div>
+                    <div style="font-size:12.5px; color:#8f8b82; margin-top:2px;">{{ job.date }}</div>
+                  </div>
+                </div>
+                <div style="margin:12px 0 0; font-size:13.5px; color:#57544d; line-height:1.7;">
+                  <sc-for list="{{ job.bullets }}" as="b" hint-placeholder-count="1">
+                    <p style="margin:0 0 6px;">{{ b }}</p>
+                  </sc-for>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:7px; margin-top:13px;">
+                  <sc-for list="{{ job.tags }}" as="t" hint-placeholder-count="3">
+                    <span class="tag" style="background:#f1efe9; color:#6b6860; border-radius:100px; padding:4px 11px; font-size:12px; font-weight:500;">{{ t }}</span>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- projects -->
+    <section id="projects" style="border-top:1px solid #e4e1da; padding:64px 40px; display:grid; grid-template-columns:200px 1fr; gap:44px; scroll-margin-top:72px;">
+      <div style="font-family:'Newsreader',serif; font-style:italic; font-size:26px; color:#8a6d4b;">Projects</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div class="hover-card" style="{{ projCardStyle }}"><div class="accent-bar" style="{{ projAccentStyle }}"></div><h3 style="margin:0; font-size:17px; font-weight:600;">OnboardOps Agent</h3><p style="margin:8px 0 0; font-size:13.5px; color:#57544d; line-height:1.6;">End-to-end onboarding platform with role-based manager and intern views, integrating Jira and an AI assistant to automate task tracking.</p><p style="margin:12px 0 0; font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; color:#a29d92;">React · Spring Boot · Jira API</p></div>
+        <div class="hover-card" style="{{ projCardStyle }}"><div class="accent-bar" style="{{ projAccentStyle }}"></div><h3 style="margin:0; font-size:17px; font-weight:600;">CLEP PathFinder</h3><p style="margin:8px 0 0; font-size:13.5px; color:#57544d; line-height:1.6;">Full-stack platform to search colleges and manage CLEP-credit policies through an interactive map and role-based admin portal.</p><p style="margin:12px 0 0; font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; color:#a29d92;">React · Next.js · PostgreSQL</p></div>
+        <div class="hover-card" style="{{ projCardStyle }}"><div class="accent-bar" style="{{ projAccentStyle }}"></div><h3 style="margin:0; font-size:17px; font-weight:600;">SpendWise</h3><p style="margin:8px 0 0; font-size:13.5px; color:#57544d; line-height:1.6;">Android budgeting app to track spending by category, visualize it with interactive charts, and manage shared group budgets between users.</p><p style="margin:12px 0 0; font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; color:#a29d92;">Android Studio · Java · Firebase</p></div>
+      </div>
+    </section>
+
+    <!-- skills -->
+    <section style="border-top:1px solid #e4e1da; padding:64px 40px; display:grid; grid-template-columns:200px 1fr; gap:44px;">
+      <div style="font-family:'Newsreader',serif; font-style:italic; font-size:26px; color:#8a6d4b;">Skills</div>
+      <div>
+        <div style="display:flex; gap:8px; margin-bottom:28px; flex-wrap:wrap;">
+          <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="3">
+            <button onClick="{{ cat.select }}" style="{{ cat.tabStyle }}" style-hover="{{ cat.tabHoverStyle }}">{{ cat.name }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; min-height:44px;">
+          <sc-for list="{{ activeSkills }}" as="skill">
+            <span class="chip" style="display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid #e4e1da; color:#3a3730; padding:9px 16px 9px 12px; border-radius:100px; font-size:14px; font-weight:500; cursor:default;">
+              <span style="{{ skill.iconStyle }}"></span>
+              {{ skill.name }}
+            </span>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- interests -->
+    <section id="interests" style="border-top:1px solid #e4e1da; padding:64px 40px; display:grid; grid-template-columns:200px 1fr; gap:44px; scroll-margin-top:72px;">
+      <div style="font-family:'Newsreader',serif; font-style:italic; font-size:26px; color:#8a6d4b;">Interests</div>
+      <div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:440px;">
+          <figure style="margin:0;">
+            <div style="width:100%; height:180px; border-radius:14px; overflow:hidden; box-shadow:0 20px 44px -26px rgba(60,45,25,0.45);">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="studyabroad" shape="rounded" radius="14" placeholder="Drop a study-abroad photo" src="assets/studyabroad-1.png" style="width:100%; height:100%;" hint-size="100%,100%"></x-import>
+            </div>
+            <figcaption style="margin:11px 2px 0; font-size:13.5px;"><strong style="font-weight:600;">Study abroad — Barcelona</strong><br><span style="color:#8f8b82;">2025</span></figcaption>
+          </figure>
+          <figure style="margin:0;">
+            <div style="width:100%; height:180px; border-radius:14px; overflow:hidden; box-shadow:0 20px 44px -26px rgba(60,45,25,0.45);">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="dance" shape="rounded" radius="14" placeholder="Drop a dance photo" src="assets/dance.png" style="width:100%; height:100%;" hint-size="100%,100%"></x-import>
+            </div>
+            <figcaption style="margin:11px 2px 0; font-size:13.5px;"><strong style="font-weight:600;">Dance</strong><br><span style="color:#8f8b82;">GT Jadoo</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact / footer -->
+    <section id="contact" style="border-top:1px solid #e4e1da; padding:64px 40px 80px; scroll-margin-top:72px;">
+      <div style="display:flex; flex-wrap:wrap; gap:14px;">
+        <a href="mailto:mbatra9@gatech.edu" style="text-decoration:none; background:#1c1b18; color:#FAF9F6; padding:13px 24px; border-radius:100px; font-size:14px; font-weight:600;">mbatra9@gatech.edu</a>
+        <a href="#" style="text-decoration:none; border:1px solid #cfc9bd; color:#1c1b18; padding:13px 24px; border-radius:100px; font-size:14px; font-weight:600;">LinkedIn</a>
+        <a href="tel:5712467940" style="text-decoration:none; border:1px solid #cfc9bd; color:#1c1b18; padding:13px 24px; border-radius:100px; font-size:14px; font-weight:600;">571·246·7940</a>
+      </div>
+      <p style="margin:56px 0 0; font-size:13px; color:#a29d92;">© 2026 Mahika Batra · Atlanta, GA</p>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeCategory: 0, openJob: 0 };
+
+  jobsData = [
+    { logoId: 'logo-jpmc', mono: 'JP', logoSrc: 'assets/logo-jpmc.png', role: 'Software Engineer Intern', company: 'JPMorgan Chase', date: 'June 2026 – Present', location: 'New York City, NY',
+      bullets: ['Built resiliency testing and CI/CD caching (~40% faster deploys) for a core banking application, plus Kafka event pipelines.'], tags: ['AWS', 'Kafka', 'CI/CD'] },
+    { logoId: 'logo-popsign', mono: 'PS', logoSrc: 'assets/logo-popsign.png', role: 'Software Engineering Researcher', company: 'Georgia Tech, Contextual Computing Group', date: 'Aug 2025 – Present', location: 'Atlanta, GA',
+      bullets: ['Built a Unity game and interface features teaching sign language to hearing parents of deaf children (PopSignAI).'], tags: ['Unity', 'C#', 'Game Dev'] },
+    { logoId: 'logo-pin', mono: 'Pn', logoSrc: 'assets/logo-pin.png', role: 'Full Stack Developer', company: 'Pin — WebDev Club', date: 'Aug 2025 – Dec 2025', location: 'Atlanta, GA',
+      bullets: ['Mobile-first social app for rating and exploring cities and neighborhoods, backed by scalable Go and SQL services serving 5,000+ users.'], tags: ['Go', 'SQL', 'RESTful APIs'] },
+    { logoId: 'logo-ta', mono: 'GT', logoSrc: 'assets/logo-ta.png', role: 'Undergraduate Teaching Assistant', company: 'Georgia Tech, College of Computing', date: 'Aug 2025 – Dec 2025', location: 'Atlanta, GA',
+      bullets: ['CS 1100: Freshman Leap Seminar. Mentored 600+ first-year students on coding fundamentals and CS pathways.'], tags: ['Mentorship', 'CS Fundamentals'] },
+    { logoId: 'logo-varmoda', mono: 'Va', logoSrc: 'assets/logo-varmoda.png', role: 'Software Engineer Intern', company: 'Varmoda Tech', date: 'June 2024 – Aug 2024', location: 'Ashburn, VA',
+      bullets: ['Built an internal chatbot converting natural-language questions into safe SQL for self-serve access across 200+ contracts.'], tags: ['Python', 'SQL', 'NLP'] }
+  ];
+
+  categoryData = [
+    { name: 'Languages', skills: [
+      ['Python', 'python'], ['Java', 'openjdk'], ['C++', 'cplusplus'], ['JavaScript', 'javascript'],
+      ['Go', 'go'], ['HTML', 'html5'], ['SQL', ''], ['CSS', 'css'], ['C', 'c'], ['TypeScript', 'typescript'], ['Assembly', '']
+    ] },
+    { name: 'Frameworks & Libraries', skills: [
+      ['React.js', 'react'], ['Next.js', 'nextdotjs'], ['Node.js', 'nodedotjs'], ['Express.js', 'express'],
+      ['Django', 'django'], ['Flask', 'flask'], ['Spring Boot', 'springboot'], ['JAX', '']
+    ] },
+    { name: 'Cloud & Databases', skills: [
+      ['AWS', 'amazonwebservices'], ['Docker', 'docker'], ['Terraform', 'terraform'], ['Kafka', 'apachekafka'],
+      ['CI/CD', ''], ['PostgreSQL', 'postgresql'], ['MySQL', 'mysql'], ['Cassandra', 'apachecassandra'],
+      ['MongoDB', 'mongodb'], ['Kubernetes', 'kubernetes']
+    ] },
+    { name: 'Tools', skills: [
+      ['Git', 'git'], ['GitHub', 'github'], ['VS Code', ''], ['Xcode', 'xcode'],
+      ['Unix', 'linux'], ['Tableau', 'tableau'], ['Power BI', ''], ['Eclipse', 'eclipseide'], ['Figma', 'figma']
+    ] }
+  ];
+
+  renderVals() {
+    const active = this.state.activeCategory;
+    const categories = this.categoryData.map((c, i) => {
+      const isActive = i === active;
+      return {
+        name: c.name,
+        select: () => this.setState({ activeCategory: i }),
+        tabStyle: {
+          padding: '9px 18px',
+          borderRadius: '100px',
+          fontSize: '14px',
+          fontWeight: 600,
+          border: isActive ? '1px solid #1c1b18' : '1px solid #d8d3c9',
+          background: isActive ? '#1c1b18' : 'transparent',
+          color: isActive ? '#FAF9F6' : '#6b6860',
+          cursor: 'pointer',
+          transition: 'all 0.15s ease'
+        },
+        tabHoverStyle: isActive ? {} : { borderColor: '#8a6d4b', color: '#8a6d4b' }
+      };
+    });
+    const activeSkills = this.categoryData[active].skills.map(([name, slug]) => ({
+      name,
+      iconStyle: slug
+        ? { width: '18px', height: '18px', flex: '0 0 auto', backgroundImage: `url(https://cdn.simpleicons.org/${slug})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }
+        : { width: '0px', height: '0px' }
+    }));
+    const jobs = this.jobsData.map((j, i) => {
+      return {
+        ...j,
+        cardStyle: {
+          position: 'relative',
+          border: '1px solid #e4e1da',
+          background: '#fbfaf7',
+          borderRadius: '16px',
+          padding: '18px 20px 18px 24px',
+          overflow: 'hidden',
+          transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease'
+        },
+        cardHoverStyle: { transform: 'translateY(-4px) scale(1.008)', background: '#fff', borderColor: '#caa982', boxShadow: '0 22px 44px -24px rgba(60,45,25,0.55)' },
+        accentStyle: {
+          position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px',
+          background: '#8a6d4b', transform: 'scaleY(0)', transformOrigin: 'top',
+          transition: 'transform 0.25s ease'
+        },
+        accentHoverStyle: { transform: 'scaleY(1)' }
+      };
+    });
+    return {
+      jobs,
+      categories,
+      activeSkills,
+      chipHoverStyle: { transform: 'translateY(-2px)', borderColor: '#8a6d4b', boxShadow: '0 8px 18px -10px rgba(60,45,25,0.4)' },
+      projCardStyle: { position: 'relative', border: '1px solid #e4e1da', background: '#fbfaf7', borderRadius: '16px', padding: '20px 20px 20px 24px', overflow: 'hidden', transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease' },
+      projCardHoverStyle: { transform: 'translateY(-4px) scale(1.01)', background: '#fff', borderColor: '#caa982', boxShadow: '0 22px 44px -24px rgba(60,45,25,0.55)' },
+      projAccentStyle: { position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: '#8a6d4b', transform: 'scaleY(0)', transformOrigin: 'top', transition: 'transform 0.25s ease' },
+      projAccentHoverStyle: { transform: 'scaleY(1)' },
+      navHover: { color: '#8a6d4b' },
+      contactHover: { color: '#8a6d4b', borderColor: '#8a6d4b' },
+      headshotHover: { transform: 'scale(1.03)', boxShadow: '0 40px 70px -30px rgba(60,45,25,0.55)' },
+      tagHover: { background: '#8a6d4b', color: '#fff' }
+    };
+  }
+}
+</script>
+</body>
+</html>
